@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>AI Resume Builder</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <div class="container">
+    <h1>AI Resume Builder</h1>
+    <p>Upload a job description or file, and let AI craft your perfect resume</p>
+
+    <form method="POST" action="/process" enctype="multipart/form-data">
+      <label for="resume">Upload Resume (PDF or DOCX)</label>
+      <input type="file" id="resume" name="resume" accept=".pdf,.doc,.docx" required />
+
+      <label for="job_description">Paste Job Description</label>
+      <textarea id="job_description" name="job_description" placeholder="Paste the job description here..." rows="6" required></textarea>
+
+      <button type="submit">Submit</button>
+    </form>
+  </div>
+</body>
+</html>
